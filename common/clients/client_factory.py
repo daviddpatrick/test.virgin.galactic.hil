@@ -1,4 +1,4 @@
-from common.clients.gusto_client import GustoApiClient
+from common.clients.api_client import ApiClient
 
 
 class ClientFactory(object):
@@ -6,7 +6,7 @@ class ClientFactory(object):
     def create(self, name, base_url, logger, auth_token=None, extra_headers=None):
         while name:
             api_clients = {
-                "GustoApiClient": lambda: GustoApiClient(
+                "ApiClient": lambda: ApiClient(
                     base_url,
                     logger,
                     auth_token=auth_token,

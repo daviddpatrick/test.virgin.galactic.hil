@@ -6,7 +6,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import allure
 import pytest
 
-from common.http_base.http_base import HttpClientBase
+from common.clients.api_client import ApiClient
 
 
 class _ApiHandler(BaseHTTPRequestHandler):
@@ -59,9 +59,9 @@ def api_server():
 @pytest.mark.api
 def test_health_endpoint(api_server):
     logger = logging.getLogger("api.health")
-    client = HttpClientBase(base_url=api_server, logger=logger)
+    client = ApiClient(base_url=api_server, logger=logger)
 
-    response = client._get("v1/health")
+    response = client.get("v1/health")
 
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
@@ -72,10 +72,10 @@ def test_health_endpoint(api_server):
 @pytest.mark.api
 def test_echo_endpoint(api_server):
     logger = logging.getLogger("api.echo")
-    client = HttpClientBase(base_url=api_server, logger=logger)
+    client = ApiClient(base_url=api_server, logger=logger)
 
     payload = {"command": "arming", "value": True}
-    response = client._post("v1/echo", data=payload)
+    response = client.post("v1/echo", data=payload)
 
     assert response.status_code == 200
     assert response.json() == {"received": payload}
