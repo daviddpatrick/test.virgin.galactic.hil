@@ -1,0 +1,14 @@
+07/25/2023 02:48:53 PM - INFO     *********************** Session Logging ****************************
+07/25/2023 02:48:53 PM - INFO     =================================================================
+07/25/2023 02:48:53 PM - INFO     Starting test:
+07/25/2023 02:48:53 PM - INFO     Using these Environment Configs: {'env': {'name': 'us'}, 'coinbase_url': 'https://api.coinbase.com/v2'}
+07/25/2023 02:48:53 PM - INFO     Coinbase API Client
+07/25/2023 02:48:53 PM - INFO     
+________________________________________________________________________________
+07/25/2023 02:48:53 PM - INFO     GET URL = https://api.coinbase.com/v2/prices/BTC-USD/buy
+07/25/2023 02:48:53 PM - INFO     STATUS CODE = 200
+07/25/2023 02:48:53 PM - INFO     TIME ELAPSED = 0.130617
+07/25/2023 02:48:53 PM - INFO     The price of Bitcoin is: $29365.40, you're a winner!
+07/25/2023 02:48:53 PM - INFO     Test Duration: 0.137571 seconds
+07/25/2023 02:48:53 PM - INFO     FINISHED
+07/25/2023 02:48:53 PM - INFO     =================================================================
